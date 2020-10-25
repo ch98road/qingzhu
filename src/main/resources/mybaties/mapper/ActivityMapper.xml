@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.docker.qmmall.mapper.ActivityMapper">
+
+    <!--private Integer activityid;-->
+    <!--private String activityname;-->
+    <!--private String activitycontent;-->
+    <!--private Integer activitystate;-->
+
+    <!--Integer addActivity(Activity activity);-->
+    <insert id="addActivity">
+        INSERT  INTO activity(activityname,activitycontent,activitystate) VALUES ('${activityname}','${activitycontent}','${activitystate}');
+    </insert>
+
+    <!--Integer updateActivity(Activity activity);-->
+    <update id="updateActivity">
+        UPDATE activity
+        SET activitystate = '${activitystate}'
+        <if test="activitycontent!=null">
+            SET activitycontent = '${activitycontent}'
+        </if>
+        <if test="activityname!=null">
+            SET activityname = '${activityname}'
+        </if>
+        WHERE '${activityid}'=activityid
+    </update>
+
+    <!--Integer deleteActivity(Activity activity);-->
+    <delete id="deleteType">
+        DELETE FROM commoditytype WHERE id='${id}';
+    </delete>
+
+    <!--LinkedList<Activity> getActivity(Activity activity);-->
+    <select id="getTpye" resultType="java.util.LinkedList">
+        SELECT * FROM  commoditytype WHERE  name LIKE '${name}'
+        <if test="id!=null">
+            AND id = '${id}'
+        </if>
+        <if test="type!=null">
+            AND type = '${type}'
+        </if>;
+    </select>
+
+
+
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.docker.qmmall.mapper.OrderMapper">
+
+    <!--private Integer id;-->
+    <!--private Double totalprice;-->
+    <!--private String user;-->
+    <!--private Integer paymentstatus;-->
+
+    <!--Integer commitOrder(Order order);-->
+    <insert id="commitOrder">
+        INSERT  INTO user(totalprice,user,paymentstatus) VALUES ('${totalprice}','${user}','${paymentstatus}')
+    </insert>
+
+    <!--LinkedList<Order> getOrder(Order order);-->
+    <select id="getOrder" resultType="java.util.LinkedList">
+        SELECT * FROM  order WHERE  user='${user}'
+        <if test="paymentstatus!=null">
+            AND paymentstatus = '${paymentstatus}'
+        </if>
+        <if test="id!=null">
+            AND id = '${id}'
+        </if>;
+    </select>
+</mapper>
