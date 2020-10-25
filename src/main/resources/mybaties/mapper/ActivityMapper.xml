@@ -6,43 +6,49 @@
 
     <!--private Integer activityid;-->
     <!--private String activityname;-->
-    <!--private String activitycontent;-->
     <!--private Integer activitystate;-->
+    <!--private String activitypic;-->
+    <!--private Date activitystarttime;-->
+    <!--private Date activityendtime;-->
+    <!--private Integer productid;-->
+    <!--private Integer activetytype;-->
 
     <!--Integer addActivity(Activity activity);-->
     <insert id="addActivity">
-        INSERT  INTO activity(activityname,activitycontent,activitystate) VALUES ('${activityname}','${activitycontent}','${activitystate}');
+        INSERT  INTO tb_activity(activityname,activitystate,activitypic,activitystarttime,activityendtime,productid,activetytype)
+        VALUES ('${activityname}','${activitystate}','${activitypic}','${activitystarttime}','${activityendtime}','${productid}','${activetytype}');
     </insert>
 
     <!--Integer updateActivity(Activity activity);-->
     <update id="updateActivity">
-        UPDATE activity
+        UPDATE tb_activity
         SET activitystate = '${activitystate}'
-        <if test="activitycontent!=null">
-            SET activitycontent = '${activitycontent}'
+        <if test="activitypic!=null">
+            ,SET activitypic = '${activitypic}'
         </if>
-        <if test="activityname!=null">
-            SET activityname = '${activityname}'
+        <if test="productid!=null">
+            ,SET productid = '${productid}'
         </if>
         WHERE '${activityid}'=activityid
+        <if test="activityname!=null">
+            AND activityname = '${activityname}'
+        </if>;
     </update>
 
     <!--Integer deleteActivity(Activity activity);-->
     <delete id="deleteType">
-        DELETE FROM commoditytype WHERE id='${id}';
+        DELETE FROM tb_activity WHERE id='${activityid}';
     </delete>
 
     <!--LinkedList<Activity> getActivity(Activity activity);-->
     <select id="getTpye" resultType="java.util.LinkedList">
-        SELECT * FROM  commoditytype WHERE  name LIKE '${name}'
-        <if test="id!=null">
-            AND id = '${id}'
+        SELECT * FROM  tb_activity WHERE  name LIKE '${name}'
+        <if test="activityid!=null">
+            AND id = '${activityid}'
         </if>
-        <if test="type!=null">
-            AND type = '${type}'
+        <if test="activetytype!=null">
+            AND activetytype = '${activetytype}'
         </if>;
     </select>
-
-
 
 </mapper>

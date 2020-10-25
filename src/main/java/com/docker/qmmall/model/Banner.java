@@ -6,18 +6,18 @@ package com.docker.qmmall.model;
 public class Banner {
     private Integer banner_id;
     private String banner_pic;
-    private String banner_description;
-    private String banner_link;
+    private String prodicid;
 
     public Banner() {
     }
 
-    public Banner(Integer banner_id, String banner_pic, String banner_description, String banner_link) {
-
-        this.banner_id = banner_id;
-        this.banner_pic = banner_pic;
-        this.banner_description = banner_description;
-        this.banner_link = banner_link;
+    @Override
+    public String toString() {
+        return "Banner{" +
+                "banner_id=" + banner_id +
+                ", banner_pic='" + banner_pic + '\'' +
+                ", prodicid='" + prodicid + '\'' +
+                '}';
     }
 
     public Integer getBanner_id() {
@@ -36,19 +36,18 @@ public class Banner {
         this.banner_pic = banner_pic;
     }
 
-    public String getBanner_description() {
-        return banner_description;
+    public String getProdicid() {
+        return prodicid;
     }
 
-    public void setBanner_description(String banner_description) {
-        this.banner_description = banner_description;
+    public void setProdicid(String prodicid) {
+        this.prodicid = prodicid;
     }
 
-    public String getBanner_link() {
-        return banner_link;
-    }
+    public Banner(Integer banner_id, String banner_pic, String prodicid) {
 
-    public void setBanner_link(String banner_link) {
-        this.banner_link = banner_link;
+        this.banner_id = banner_id;
+        this.banner_pic = banner_pic;
+        this.prodicid = prodicid;
     }
 }

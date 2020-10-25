@@ -8,15 +8,30 @@
     <!--private Double totalprice;-->
     <!--private String user;-->
     <!--private Integer paymentstatus;-->
+    <!--private String productinfo;-->
+    <!--private String address;-->
+    <!--private Date ordertime;-->
+    <!--private Date finishtime;-->
+    <!--private Integer payway;-->
+
+    <!--Integer updateOrder(Order order);-->
+    <update id="updateOrder">
+        UPDATE tb_order
+        SET  paymentstatus = '${paymentstatus}',
+        SET  finishtime = '${finishtime}',
+        SET  payway = '${payway}',
+        WHERE '${id}'=id;
+    </update>
 
     <!--Integer commitOrder(Order order);-->
     <insert id="commitOrder">
-        INSERT  INTO user(totalprice,user,paymentstatus) VALUES ('${totalprice}','${user}','${paymentstatus}')
+        INSERT  INTO tb_order(totalprice,user,paymentstatus,productinfo,address,ordertime)
+                VALUES ('${totalprice}','${user}','${paymentstatus}','${productinfo}','${address}','${ordertime}');
     </insert>
 
     <!--LinkedList<Order> getOrder(Order order);-->
     <select id="getOrder" resultType="java.util.LinkedList">
-        SELECT * FROM  order WHERE  user='${user}'
+        SELECT * FROM  tb_order WHERE  user='${user}'
         <if test="paymentstatus!=null">
             AND paymentstatus = '${paymentstatus}'
         </if>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.docker.qmmall.mapper.ProductMapper">
+
+    <!--private Integer productid;-->
+    <!--private String productname;-->
+    <!--private Float productprice;-->
+    <!--private String productpic;-->
+    <!--private Integer productcount;-->
+    <!--private Integer productsallcount;-->
+    <!--private Integer producttype;-->
+    <!--private Date producttime;-->
+    <!--private Integer productbrandid;-->
+    <!--private Integer productstate;-->
+    <!--private String productdes;-->
+
+    <!--Integer addCommondProductdproductdity);-->
+    <insert id="addCommodity">
+        INSERT  INTO tb_product(productname,productprice,productpic,productcount,productsallcount,producttype,producttime,productbrandid,productstate,productdes)
+                VALUES ('${productname}','${productprice}','${productpic}','${productcount}','${productsallcount}','${producttype}','${producttime}','${productbrandid}','${productstate}','${productdes}')
+    </insert>
+
+    <!--LinkedLProductdity> getCommondProductdproductdity);-->
+    <select id="getCommodity" resultType="java.util.LinkedList">
+        SELECT * FROM tb_product WHERE  productname LIKE '%${productname}%'
+        <if test="productstate!=null">
+            AND productstate = '%${productstate}%'
+        </if>
+        <if test="producttype!=null">
+            AND producttype = '${producttype}'
+        </if>
+        <if test="productid!=null">
+            AND id = '${productid}'
+        </if>;
+    </select>
+
+</mapper>

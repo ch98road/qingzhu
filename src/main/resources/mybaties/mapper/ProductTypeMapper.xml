@@ -2,22 +2,22 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.docker.qmmall.mapper.CommodityTypeMapper">
+<mapper namespace="com.docker.qmmall.mapper.ProductTypeMapper">
 
     <!--private Integer id;-->
     <!--private String name;-->
     <!--private Integer type;-->
 
 
-    <!--Integer addType(Commoditytype commoditytype);-->
+    <!--Integer addTProductTypetproductTypetype);-->
     <insert id="addType">
-        INSERT  INTO commoditytype(name,type) VALUES ('${name}','${type}')
+        INSERT  INTO tb_productType(name,type) VALUES ('${name}','${type}')
     </insert>
 
-    <!--Integer updateType(Commoditytype commoditytype);-->
+    <!--Integer updateTProductTypetproductTypetype);-->
     <update id="updateType">
-        UPDATE commoditytype
-        SET name = '${commoditytype}'
+        UPDATE tb_productType
+        SET name = '${productType}'
         WHERE '${id}'=id
         <if test="type!=null">
             AND type = '${type}'
@@ -25,16 +25,20 @@
     </update>
     <!--Integer deleteType();-->
     <delete id="deleteType">
-        DELETE FROM commoditytype WHERE id='${id}';
+        DELETE FROM tb_productType WHERE id='${id}';
     </delete>
-    <!--LinkedList<Commoditytype> getTpye(Commoditytype commoditytype);-->
+    <!--LinkedLProductTypetype> getTProductTypetproductTypetype);-->
     <select id="getTpye" resultType="java.util.LinkedList">
-        SELECT * FROM  commoditytype WHERE  name LIKE '${name}'
+        SELECT * FROM  tb_productType WHERE  name LIKE '${name}'
         <if test="id!=null">
             AND id = '${id}'
         </if>
         <if test="type!=null">
             AND type = '${type}'
         </if>;
+    </select>
+    <!--getallTpye-->
+    <select id="getallTpye" resultType="java.util.LinkedList">
+        SELECT * FROM tb_productType;
     </select>
 </mapper>

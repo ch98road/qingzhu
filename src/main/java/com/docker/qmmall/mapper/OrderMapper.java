@@ -11,6 +11,13 @@ public interface OrderMapper {
 
 
     Integer commitOrder(Order order);
+
+    /**
+     *
+     * @param order
+     * @return
+     */
+    Integer updateOrder(Order order);
     /**
      * 根据用户名查询，可以加上状态，id
      * @param order

@@ -2,10 +2,11 @@ package com.docker.qmmall.model;
 
 /**
  * Created by CHEN on 2020/10/23.
+ * cart的设计存在问题，有待商讨
  */
 public class Shoppingcart {
     private Integer userid;
-    private Integer commodityid;
+    private Integer product;
     private Integer number;
     private Float price;
     private Float totalprice;
@@ -13,8 +14,18 @@ public class Shoppingcart {
     public Shoppingcart() {
     }
 
-    public Integer getUserid() {
+    @Override
+    public String toString() {
+        return "Shoppingcart{" +
+                "userid=" + userid +
+                ", product=" + product +
+                ", number=" + number +
+                ", price=" + price +
+                ", totalprice=" + totalprice +
+                '}';
+    }
 
+    public Integer getUserid() {
         return userid;
     }
 
@@ -22,12 +33,12 @@ public class Shoppingcart {
         this.userid = userid;
     }
 
-    public Integer getCommodityid() {
-        return commodityid;
+    public Integer getProduct() {
+        return product;
     }
 
-    public void setCommodityid(Integer commodityid) {
-        this.commodityid = commodityid;
+    public void setProduct(Integer product) {
+        this.product = product;
     }
 
     public Integer getNumber() {
@@ -54,10 +65,9 @@ public class Shoppingcart {
         this.totalprice = totalprice;
     }
 
-    public Shoppingcart(Integer userid, Integer commodityid, Integer number, Float price, Float totalprice) {
-
+    public Shoppingcart(Integer userid, Integer product, Integer number, Float price, Float totalprice) {
         this.userid = userid;
-        this.commodityid = commodityid;
+        this.product = product;
         this.number = number;
         this.price = price;
         this.totalprice = totalprice;

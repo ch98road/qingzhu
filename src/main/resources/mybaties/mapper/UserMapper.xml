@@ -15,19 +15,20 @@
     <!--private Integer user_sex;-->
     <!--private String user_email;-->
     <insert id="reigster">
-        INSERT  INTO user(user_id,user_name,user_nick,user_password,user_telephone,user_icon,user_address,user_sex,user_email) VALUES ('${user_id}','${user_name}','${user_nick}','${user_password}',
-        '${user_telephone}','${user_icon}','${user_address}','${user_sex}','${user_email}')
+        INSERT  INTO tb_user(user_id,user_name,user_nick,user_password,user_telephone,user_icon,user_address,user_sex,user_email)
+                VALUES ('${user_id}','${user_name}','${user_nick}','${user_password}','${user_telephone}','${user_icon}','${user_address}','${user_sex}','${user_email}')
     </insert>
     <!--User login(User user);-->
     
     <!--Integer findpass(User user);-->
     <update id="findpass">
-        UPDATE user
+        UPDATE tb_user
         SET user_password = '${user_password}'
         WHERE '${user_name}'=username;
     </update>
     <!--LinkedList<User> getUser(User user);-->
     <select id="getUser" resultType="java.util.LinkedList">
-        SELECT * FROM  USER WHERE  user_telephone='${user_telephone}'
+        SELECT * FROM  tb_user
+        WHERE  user_telephone='${user_telephone}';
     </select>
 </mapper>

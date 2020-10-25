@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.docker.qmmall.mapper.PayWayMapper">
+
+
+    <!--private Integer banner_id;-->
+    <!--private String banner_pic;-->
+    <!--private String prodicid;-->
+
+    <!--Integer addBanner(Banner banner);-->
+    <insert id="addBanner">
+        INSERT  INTO tb_banner(banner_pic,banner_pic,prodicid)
+        VALUES ('${banner_pic}','${banner_pic}','${prodicid}');
+    </insert>
+
+    <!--LinkedList getBanner(Banner banner);-->
+    <select id="getBanner" resultType="java.util.LinkedList">
+        SELECT * FROM  tb_banner
+        <if test="prodicid!=null">
+            WHERE prodicid = '${prodicid}'
+        </if>;
+    </select>
+</mapper>
