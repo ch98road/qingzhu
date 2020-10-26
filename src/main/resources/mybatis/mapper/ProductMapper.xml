@@ -24,7 +24,7 @@
     </insert>
 
     <!--LinkedList<Product> getProduct(Product product);-->
-    <select id="getProduct" resultType="java.util.LinkedList">
+    <select id="getProduct" resultType="com.docker.qmmall.model.Product">
         SELECT * FROM tb_product WHERE  productname LIKE '%${productname}%'
         <if test="productstate!=null">
             AND productstate = '${productstate}'
@@ -38,8 +38,8 @@
     </select>
 
     <!--LinkedList<Product> getProductProfile(Product product);-->
-    <select id="getProductProfile" resultType="java.util.LinkedList">
-        SELECT productid,productname,productprice,productpic
+    <select id="getProductProfile" resultType="com.docker.qmmall.model.Product">
+        SELECT productid,productname,productprice,productpic FROM tb_product
         WHERE producttype='${producttype}';
     </select>
 

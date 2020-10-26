@@ -5,12 +5,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/26.
  */
 public interface ShoppingCartService {
-    public LinkedList<Shoppingcart> getCart(Integer userid);
+    public Map<String,Object> getCart(Integer userid);
 
     public Integer addCart( Integer userid, String productinfo);
 

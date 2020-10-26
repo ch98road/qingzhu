@@ -6,7 +6,9 @@ import com.docker.qmmall.service.ProductTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/26.
@@ -39,7 +41,10 @@ public class ProductTypeServiceImpl implements ProductTypeService {
     }
 
     @Override
-    public LinkedList<ProductType> getTpye() {
-        return productTypeMapper.getallTpye();
+    public Map<String,Object> getTpye() {
+        Map<String,Object> res = new HashMap<>();
+        res.put("res",100);
+        res.put("data",productTypeMapper.getallTpye();
+        return res;
     }
 }

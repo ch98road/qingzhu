@@ -10,8 +10,7 @@
     <!--private String prodicid;-->
 
     <!--LinkedLProductBrandServicerand> getProductBrand();-->
-
-    <select id="getBanner" resultType="java.util.LinkedList">
+    <select id="getProductBrand" resultType="com.docker.qmmall.model.ProductBrand">
         SELECT * FROM  tb_productbrand;
     </select>
 </mapper>

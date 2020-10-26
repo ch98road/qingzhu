@@ -44,7 +44,7 @@
     </delete>
 
     <!--LinkedList<Activity> getActivity(Activity activity);-->
-    <select id="getTpye" resultType="java.util.LinkedList">
+    <select id="getTpye" resultType="com.docker.qmmall.model.Activity">
         SELECT * FROM tb_activity WHERE name LIKE '${name}'
         <if test="activityid!=null">
             AND id = '${activityid}'

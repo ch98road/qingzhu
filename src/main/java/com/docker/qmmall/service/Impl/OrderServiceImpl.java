@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/26.
@@ -32,9 +34,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public LinkedList<Order> getOrder(Integer id) {
+    public Map<String,Object> getOrder(Integer id) {
         Order order = new Order();
         order.setId(id);
-        return orderMapper.getOrder(order);
+        Map<String,Object> res = new HashMap<>();
+        res.put("res",100);
+        res.put("data",orderMapper.getOrder(order));
+        return res;
     }
 }

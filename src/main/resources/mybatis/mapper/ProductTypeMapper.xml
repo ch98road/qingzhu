@@ -39,7 +39,7 @@
         <!--</if>;-->
     <!--</select>-->
     <!--getallTpye-->
-    <select id="getallTpye" resultType="java.util.LinkedList">
+    <select id="getallTpye" resultType="com.docker.qmmall.model.ProductType">
         SELECT * FROM tb_productType;
     </select>
 </mapper>

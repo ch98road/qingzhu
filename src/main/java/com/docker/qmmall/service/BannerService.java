@@ -4,6 +4,7 @@ import com.docker.qmmall.model.Banner;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/26.
@@ -11,5 +12,5 @@ import java.util.LinkedList;
 public interface BannerService {
 
     Integer addBanner(String banner_pic,String prodicid);
-    LinkedList<Banner> getBanner();
+    Map<String,Object> getBanner();
 }

@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/26.
@@ -48,9 +50,11 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
-    public LinkedList<Activity> getActivity(String activitystate, String activetytype) {
+    public Map<String,Object> getActivity(String activitystate, String activetytype) {
         Activity activity = new Activity();
-
-        return activityMapper.getActivity(activity);
+        Map<String,Object> res = new HashMap<>();
+        res.put("res",100);
+        res.put("data",activityMapper.getActivity(activity));
+        return res;
     }
 }

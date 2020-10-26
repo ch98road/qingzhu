@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/26.
@@ -19,5 +20,5 @@ public interface ActivityService {
 
     public Integer deleteActivity(Integer activityid);
 
-    public LinkedList<Activity> getActivity(String activitystate, String activetytype);
+    public Map<String,Object> getActivity(String activitystate, String activetytype);
 }

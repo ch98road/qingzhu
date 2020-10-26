@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/26.
@@ -26,16 +28,23 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public LinkedList<Product> getproduct(Integer producttype) {
+    public Map<String,Object> getproduct(Integer producttype) {
         Product product = new Product( );
         product.setProducttype(producttype);
-        return productMapper.getProductProfile(product);
+        Map<String,Object> res = new HashMap<>();
+        res.put("res",100);
+        res.put("data",productMapper.getProductProfile(product));
+        return res;
     }
 
     @Override
-    public LinkedList<Product> getproductdetail(Integer producttype) {
+    public Map<String,Object> getproductdetail(Integer producttype) {
         Product product = new Product( );
         product.setProducttype(producttype);
-        return productMapper.getProduct(product);
+        product.setProducttype(producttype);
+        Map<String,Object> res = new HashMap<>();
+        res.put("res",100);
+        res.put("data",productMapper.getProduct(product));
+        return res;
     }
 }

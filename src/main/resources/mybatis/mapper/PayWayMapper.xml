@@ -9,7 +9,7 @@
     <!--private String payway;-->
 
     <!--LinkedList<PayWay> getPayWay();-->
-    <select id="getPayWay" resultType="java.util.LinkedList">
+    <select id="getPayWay" resultType="com.docker.qmmall.model.PayWay">
         SELECT * FROM  tb_payway;
     </select>
 </mapper>

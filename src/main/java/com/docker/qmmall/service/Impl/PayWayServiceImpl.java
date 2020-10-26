@@ -6,7 +6,9 @@ import com.docker.qmmall.service.PayWayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/26.
@@ -16,7 +18,11 @@ public class PayWayServiceImpl implements PayWayService {
     @Autowired
     PayWayMapper payWayMapper;
     @Override
-    public LinkedList<PayWay> getPayWay() {
-        return payWayMapper.getPayWay();
+    public Map<String,Object> getPayWay() {
+        Map<String,Object> res = new HashMap<>();
+        res.put("res",100);
+        res.put("data",payWayMapper.getPayWay());
+        return res;
+
     }
 }

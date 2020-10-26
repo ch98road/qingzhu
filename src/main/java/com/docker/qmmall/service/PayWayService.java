@@ -1,12 +1,11 @@
 package com.docker.qmmall.service;
 
-import com.docker.qmmall.model.PayWay;
 
-import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/26.
  */
 public interface PayWayService {
-    LinkedList<PayWay> getPayWay();
+    Map<String,Object> getPayWay();
 }

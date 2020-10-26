@@ -16,7 +16,7 @@
     </insert>
 
     <!--Integer addCart(Shoppingcart shoppingcart);-->
-    <select id="getCart" resultType="java.util.LinkedList">
+    <select id="getCart" resultType="com.docker.qmmall.model.Shoppingcart">
         SELECT * FROM tb_cart WHERE userid='${userid}';
     </select>
 

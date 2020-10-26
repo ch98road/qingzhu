@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/23.
@@ -26,6 +28,7 @@ public class ActivityController {
     public Integer addActivity(@RequestParam("activityname") String activityname, @RequestParam("activitystate") Integer activitystate, @RequestParam("activitypic") String activitypic,
                                @RequestParam("activitystarttime") Date activitystarttime, @RequestParam("activityendtime") Date activityendtime, @RequestParam("productid") Integer productid,
                                @RequestParam("activetytype") Integer activetytype) {
+
         return activityService.addActivity(activityname, activitystate, activitypic, activitystarttime, activityendtime, productid, activetytype);
     }
     @PostMapping("/update")

@@ -4,6 +4,7 @@ import com.docker.qmmall.model.ProductType;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/26.
@@ -16,5 +17,5 @@ public interface ProductTypeService {
 
     public Integer deleteType(Integer id);
 
-    public LinkedList<ProductType> getTpye();
+    public Map<String,Object> getTpye();
 }

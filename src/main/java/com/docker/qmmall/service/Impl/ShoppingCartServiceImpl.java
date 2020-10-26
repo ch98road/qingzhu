@@ -5,7 +5,9 @@ import com.docker.qmmall.model.Shoppingcart;
 import com.docker.qmmall.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/26.
@@ -16,8 +18,11 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     CartMapper cartMapper;
 
     @Override
-    public LinkedList<Shoppingcart> getCart(Integer userid) {
-        return cartMapper.getCart(new Shoppingcart(userid,null));
+    public Map<String,Object> getCart(Integer userid) {
+        Map<String,Object> res = new HashMap<>();
+        res.put("res",100);
+        res.put("data",cartMapper.getCart(new Shoppingcart(userid,null)));
+        return res;
     }
 
     @Override

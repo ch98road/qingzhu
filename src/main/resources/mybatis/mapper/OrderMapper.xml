@@ -30,7 +30,7 @@
     </insert>
 
     <!--LinkedList<Order> getOrder(Order order);-->
-    <select id="getOrder" resultType="java.util.LinkedList">
+    <select id="getOrder" resultType="com.docker.qmmall.model.Order">
         SELECT * FROM  tb_order WHERE  user='${user}'
         <if test="paymentstatus!=null">
             AND paymentstatus = '${paymentstatus}'

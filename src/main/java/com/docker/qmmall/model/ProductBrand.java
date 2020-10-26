@@ -5,7 +5,7 @@ package com.docker.qmmall.model;
  */
 public class ProductBrand {
     private Integer id;
-    private String priductbrand;
+    private String productbrand;
 
     public ProductBrand() {
     }
@@ -14,7 +14,7 @@ public class ProductBrand {
     public String toString() {
         return "ProductBrandMapper{" +
                 "id=" + id +
-                ", priductbrand='" + priductbrand + '\'' +
+                ", priductbrand='" + productbrand + '\'' +
                 '}';
     }
 
@@ -27,15 +27,15 @@ public class ProductBrand {
     }
 
     public String getPriductbrand() {
-        return priductbrand;
+        return productbrand;
     }
 
-    public void setPriductbrand(String priductbrand) {
-        this.priductbrand = priductbrand;
+    public void setproductbrand(String productbrand) {
+        this.productbrand = productbrand;
     }
 
-    public ProductBrand(Integer id, String priductbrand) {
+    public ProductBrand(Integer id, String productbrand) {
         this.id = id;
-        this.priductbrand = priductbrand;
+        this.productbrand = productbrand;
     }
 }
