@@ -10,7 +10,7 @@
 
 
     <!--Integer addTProductTypetproductTypetype);-->
-    <insert id="addType">
+    <insert id="addType" parameterType="com.docker.qmmall.model.ProductType" useGeneratedKeys="true" keyProperty="id">
         INSERT  INTO tb_productType(name,type) VALUES ('${name}','${type}')
     </insert>
 
@@ -27,16 +27,17 @@
     <delete id="deleteType">
         DELETE FROM tb_productType WHERE id='${id}';
     </delete>
-    <!--LinkedLProductTypetype> getTProductTypetproductTypetype);-->
-    <select id="getTpye" resultType="java.util.LinkedList">
-        SELECT * FROM  tb_productType WHERE  name LIKE '${name}'
-        <if test="id!=null">
-            AND id = '${id}'
-        </if>
-        <if test="type!=null">
-            AND type = '${type}'
-        </if>;
-    </select>
+
+    <!--&lt;!&ndash;LinkedLProductTypetype> getTProductTypetproductTypetype);&ndash;&gt;-->
+    <!--<select id="getTpye" resultType="java.util.LinkedList">-->
+        <!--SELECT * FROM  tb_productType WHERE  name LIKE '${name}'-->
+        <!--<if test="id!=null">-->
+            <!--AND id = '${id}'-->
+        <!--</if>-->
+        <!--<if test="type!=null">-->
+            <!--AND type = '${type}'-->
+        <!--</if>;-->
+    <!--</select>-->
     <!--getallTpye-->
     <select id="getallTpye" resultType="java.util.LinkedList">
         SELECT * FROM tb_productType;

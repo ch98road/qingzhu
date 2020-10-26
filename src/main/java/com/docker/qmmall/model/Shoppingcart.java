@@ -6,22 +6,13 @@ package com.docker.qmmall.model;
  */
 public class Shoppingcart {
     private Integer userid;
-    private Integer product;
-    private Integer number;
-    private Float price;
-    private Float totalprice;
-
-    public Shoppingcart() {
-    }
+    private String productinfo;
 
     @Override
     public String toString() {
         return "Shoppingcart{" +
                 "userid=" + userid +
-                ", product=" + product +
-                ", number=" + number +
-                ", price=" + price +
-                ", totalprice=" + totalprice +
+                ", productinfo='" + productinfo + '\'' +
                 '}';
     }
 
@@ -33,43 +24,21 @@ public class Shoppingcart {
         this.userid = userid;
     }
 
-    public Integer getProduct() {
-        return product;
+    public String getProductinfo() {
+        return productinfo;
     }
 
-    public void setProduct(Integer product) {
-        this.product = product;
+    public void setProductinfo(String productinfo) {
+        this.productinfo = productinfo;
     }
 
-    public Integer getNumber() {
-        return number;
-    }
+    public Shoppingcart(Integer userid, String productinfo) {
 
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
-    public Float getPrice() {
-        return price;
-    }
-
-    public void setPrice(Float price) {
-        this.price = price;
-    }
-
-    public Float getTotalprice() {
-        return totalprice;
-    }
-
-    public void setTotalprice(Float totalprice) {
-        this.totalprice = totalprice;
-    }
-
-    public Shoppingcart(Integer userid, Integer product, Integer number, Float price, Float totalprice) {
         this.userid = userid;
-        this.product = product;
-        this.number = number;
-        this.price = price;
-        this.totalprice = totalprice;
+        this.productinfo = productinfo;
     }
+
+    public Shoppingcart() {
+    }
+
 }

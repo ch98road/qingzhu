@@ -10,7 +10,6 @@ import java.util.LinkedList;
 public interface ProductTypeMapper {
       Integer addType(ProductType productType);
       Integer updateType(ProductType productType);
-      Integer deleteType();
-      LinkedList<ProductType> getTpye(ProductType productType);
+      Integer deleteType(ProductType productType);
       LinkedList<ProductType> getallTpye();
 }

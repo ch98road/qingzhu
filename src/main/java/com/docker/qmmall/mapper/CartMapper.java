@@ -12,6 +12,7 @@ public interface CartMapper {
 
     LinkedList<Shoppingcart> getCart(Shoppingcart shoppingcart);
     Integer addCart(Shoppingcart shoppingcart);
+    Integer updateCart(Shoppingcart shoppingcart);
 
 }
 

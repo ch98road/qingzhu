@@ -11,15 +11,12 @@
 
     <!--Integer addBanner(Banner banner);-->
     <insert id="addBanner">
-        INSERT  INTO tb_banner(banner_pic,banner_pic,prodicid)
-        VALUES ('${banner_pic}','${banner_pic}','${prodicid}');
-    </insert>
+    INSERT  INTO tb_banner(banner_pic,banner_pic,prodicid)
+    VALUES ('${banner_pic}','${banner_pic}','${prodicid}');
+</insert>
 
     <!--LinkedList getBanner(Banner banner);-->
     <select id="getBanner" resultType="java.util.LinkedList">
-        SELECT * FROM  tb_banner
-        <if test="prodicid!=null">
-            WHERE prodicid = '${prodicid}'
-        </if>;
-    </select>
+    SELECT * FROM  tb_banner;
+</select>
 </mapper>

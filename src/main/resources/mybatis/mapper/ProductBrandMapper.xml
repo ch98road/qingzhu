@@ -9,7 +9,7 @@
     <!--private String banner_pic;-->
     <!--private String prodicid;-->
 
-    <!--LinkedList<ProductBrand> getProductBrand();-->
+    <!--LinkedLProductBrandServicerand> getProductBrand();-->
 
     <select id="getBanner" resultType="java.util.LinkedList">
         SELECT * FROM  tb_productbrand;

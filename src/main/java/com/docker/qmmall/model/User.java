@@ -4,7 +4,7 @@ package com.docker.qmmall.model;
  * Created by CHEN on 2020/10/23.
  */
 public class User {
-    private String user_id;
+    private Integer user_id;
     private String user_name;
     private String user_nick;
     private String user_password;
@@ -17,24 +17,26 @@ public class User {
     public User() {
     }
 
-    public User(String user_id, String user_name, String user_nick, String user_password, String user_telephone, String user_icon, String user_address, Integer user_sex, String user_email) {
-        this.user_id = user_id;
-        this.user_name = user_name;
-        this.user_nick = user_nick;
-        this.user_password = user_password;
-        this.user_telephone = user_telephone;
-        this.user_icon = user_icon;
-        this.user_address = user_address;
-        this.user_sex = user_sex;
-        this.user_email = user_email;
+    @Override
+    public String toString() {
+        return "User{" +
+                "user_id=" + user_id +
+                ", user_name='" + user_name + '\'' +
+                ", user_nick='" + user_nick + '\'' +
+                ", user_password='" + user_password + '\'' +
+                ", user_telephone='" + user_telephone + '\'' +
+                ", user_icon='" + user_icon + '\'' +
+                ", user_address='" + user_address + '\'' +
+                ", user_sex=" + user_sex +
+                ", user_email='" + user_email + '\'' +
+                '}';
     }
 
-    public String getUser_id() {
-
+    public Integer getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(String user_id) {
+    public void setUser_id(Integer user_id) {
         this.user_id = user_id;
     }
 
@@ -99,6 +101,19 @@ public class User {
     }
 
     public void setUser_email(String user_email) {
+        this.user_email = user_email;
+    }
+
+    public User(Integer user_id, String user_name, String user_nick, String user_password, String user_telephone, String user_icon, String user_address, Integer user_sex, String user_email) {
+
+        this.user_id = user_id;
+        this.user_name = user_name;
+        this.user_nick = user_nick;
+        this.user_password = user_password;
+        this.user_telephone = user_telephone;
+        this.user_icon = user_icon;
+        this.user_address = user_address;
+        this.user_sex = user_sex;
         this.user_email = user_email;
     }
 }

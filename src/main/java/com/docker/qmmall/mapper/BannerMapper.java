@@ -9,7 +9,6 @@ import java.util.LinkedList;
  */
 public interface BannerMapper {
     Integer addBanner(Banner banner);
-
-    LinkedList getBanner(Banner banner);
+    LinkedList<Banner> getBanner();
 
 }

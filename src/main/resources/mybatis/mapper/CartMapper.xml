@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.docker.qmmall.mapper.CartMapper">
+
+    <!--private Integer userid;-->
+    <!--private String productinfo;-->
+
+    <!--LinkedList<Shoppingcart> getCart(Shoppingcart shoppingcart);-->
+    <!--Integer addCart(Shoppingcart shoppingcart);-->
+    <!--Integer update(Shoppingcart shoppingcart);-->
+    <!--LinkedList<Shoppingcart> getCart(Shoppingcart shoppingcart);-->
+    <insert id="addCart">
+        INSERT  INTO shoppingcart(user_id,productinfo) VALUES ('${user_id}','${productinfo}');
+    </insert>
+
+    <!--Integer addCart(Shoppingcart shoppingcart);-->
+    <select id="getCart" resultType="java.util.LinkedList">
+        SELECT * FROM tb_cart WHERE userid='${userid}';
+    </select>
+
+    <update id="updateCart">
+        UPDATE  tb_cart
+        SET productinfo='${productinfo}'
+        WHERE  userid='${userid}'
+    </update>
+</mapper>

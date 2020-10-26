@@ -8,11 +8,8 @@ import java.util.LinkedList;
  * Created by CHEN on 2020/10/23.
  */
 public interface ProductMapper {
-    Integer addCommodity(Product product);
-    LinkedList<Product> getCommodity(Product product);
-
-
-
-
+    Integer addProduct(Product product);
+    LinkedList<Product> getProduct(Product product);
+    LinkedList<Product> getProductProfile(Product product);
 
 }

@@ -22,17 +22,20 @@
     <!--Integer updateActivity(Activity activity);-->
     <update id="updateActivity">
         UPDATE tb_activity
-        SET activitystate = '${activitystate}'
-        <if test="activitypic!=null">
-            ,SET activitypic = '${activitypic}'
-        </if>
-        <if test="productid!=null">
-            ,SET productid = '${productid}'
-        </if>
+        <set>
+            activitystate = '${activitystate}'
+            <if test="activitypic!=null">
+                , activitypic = '${activitypic}'
+            </if>
+            <if test="productid!=null">
+                , productid = '${productid}'
+            </if>
+        </set>
         WHERE '${activityid}'=activityid
         <if test="activityname!=null">
             AND activityname = '${activityname}'
         </if>;
+
     </update>
 
     <!--Integer deleteActivity(Activity activity);-->
@@ -42,7 +45,7 @@
 
     <!--LinkedList<Activity> getActivity(Activity activity);-->
     <select id="getTpye" resultType="java.util.LinkedList">
-        SELECT * FROM  tb_activity WHERE  name LIKE '${name}'
+        SELECT * FROM tb_activity WHERE name LIKE '${name}'
         <if test="activityid!=null">
             AND id = '${activityid}'
         </if>

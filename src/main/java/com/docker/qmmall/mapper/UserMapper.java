@@ -5,11 +5,11 @@ package com.docker.qmmall.mapper;
  */
 import com.docker.qmmall.model.User;
 
-import java.util.LinkedList;
 
 public interface UserMapper {
     Integer reigster(User user);
     User login(User user);
     Integer findpass(User user);
-    LinkedList<User> getUser(User user);
+    Integer update(User user);
+    User getUser(User user);
 }

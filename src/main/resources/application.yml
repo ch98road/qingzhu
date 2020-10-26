@@ -4,7 +4,7 @@ spring:
   datasource:
     username: root
     password: 123456
-    url: jdbc:mysql://49.232.16.188:3306/qingzhu?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://49.232.16.188:3306/qzmall?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
 #    url: jdbc:mysql://49.232.16.188:3306/qingzhu?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
 
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -46,12 +46,14 @@ mybatis:
   # 指定sql映射文件位置
   mapper-locations: classpath:mybatis/mapper/*.xml
   configuration:
-    map-underscore-to-camel-case: true
+#    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 logging:
   level:
     com:
-      manager:
-        mapper: debug
+      docker:
+        qmmall:
+          mapper: debug
 
 
 
