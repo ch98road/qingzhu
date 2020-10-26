@@ -33,14 +33,19 @@
             AND producttype = '${producttype}'
         </if>
         <if test="productid!=null">
-            AND id = '${productid}'
+            AND productid = '${productid}'
         </if>;
     </select>
 
     <!--LinkedList<Product> getProductProfile(Product product);-->
     <select id="getProductProfile" resultType="com.docker.qmmall.model.Product">
-        SELECT productid,productname,productprice,productpic FROM tb_product
-        WHERE producttype='${producttype}';
+        SELECT productid,productname,productprice,productpic FROM tb_product;
     </select>
 
+
+    <!--LinkedList<Product> getProductById(Product product);-->
+    <select id="getProductById" resultType="com.docker.qmmall.model.Product">
+        SELECT * FROM tb_product
+        WHERE productid= '${productid}';
+    </select>
 </mapper>

@@ -55,10 +55,13 @@ public class ProductController {
      * @return
      */
     @PostMapping("/get")
-    public Map<String,Object> getproduct(@RequestParam("producttype") Integer producttype) {
-        return productService.getproduct(producttype);
+    public Map<String,Object> getproduct() {
+        return productService.getproduct();
     }
-
+    @PostMapping("/getById")
+    public Map<String,Object> getproductbyId(@RequestParam("productid") Integer productid) {
+        return productService.getproductbyId(productid);
+    }
 
     /**
      * 获取商品详细信息
@@ -66,8 +69,8 @@ public class ProductController {
      * @return
      */
     @PostMapping("/getdetail")
-    public Map<String,Object> getproductdetail(@RequestParam("producttype") Integer producttype) {
-        return productService.getproductdetail(producttype);
+    public Map<String,Object> getproductdetail() {
+        return productService.getproductdetail();
     }
 
 

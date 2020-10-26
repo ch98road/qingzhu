@@ -43,8 +43,8 @@ public class ActivityController {
     }
 
     @PostMapping("/get")
-    public Map<String,Object> getActivity(@RequestParam("activitystate") String activitystate, @RequestParam("activetytype") String activetytype) {
-        return activityService.getActivity(activitystate,activetytype);
+    public Map<String,Object> getActivity() {
+        return activityService.getActivity();
     }
 
 }

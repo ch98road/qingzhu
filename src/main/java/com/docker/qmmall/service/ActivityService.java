@@ -20,5 +20,5 @@ public interface ActivityService {
 
     public Integer deleteActivity(Integer activityid);
 
-    public Map<String,Object> getActivity(String activitystate, String activetytype);
+    public Map<String,Object> getActivity();
 }

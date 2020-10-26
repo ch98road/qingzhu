@@ -11,5 +11,5 @@ public interface ProductMapper {
     Integer addProduct(Product product);
     LinkedList<Product> getProduct(Product product);
     LinkedList<Product> getProductProfile(Product product);
-
+    LinkedList<Product> getProductById(Product product);
 }

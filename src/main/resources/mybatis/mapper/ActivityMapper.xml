@@ -11,7 +11,9 @@
     <!--private Date activitystarttime;-->
     <!--private Date activityendtime;-->
     <!--private Integer productid;-->
-    <!--private Integer activetytype;-->
+    <!--private Integer activitytype;-->
+
+
 
     <!--Integer addActivity(Activity activity);-->
     <insert id="addActivity">
@@ -39,19 +41,13 @@
     </update>
 
     <!--Integer deleteActivity(Activity activity);-->
-    <delete id="deleteType">
+    <delete id="deleteActivity">
         DELETE FROM tb_activity WHERE id='${activityid}';
     </delete>
 
     <!--LinkedList<Activity> getActivity(Activity activity);-->
-    <select id="getTpye" resultType="com.docker.qmmall.model.Activity">
-        SELECT * FROM tb_activity WHERE name LIKE '${name}'
-        <if test="activityid!=null">
-            AND id = '${activityid}'
-        </if>
-        <if test="activetytype!=null">
-            AND activetytype = '${activetytype}'
-        </if>;
+    <select id="getActivity" resultType="com.docker.qmmall.model.Activity">
+        SELECT * FROM tb_activity ORDER BY activitytype;
     </select>
 
 </mapper>

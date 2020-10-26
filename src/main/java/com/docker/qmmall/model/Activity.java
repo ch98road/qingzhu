@@ -14,7 +14,7 @@ public class Activity {
     private Date activitystarttime;
     private Date activityendtime;
     private Integer productid;
-    private Integer activetytype;
+    private Integer activitytype;
 
     @Override
     public String toString() {
@@ -26,7 +26,7 @@ public class Activity {
                 ", activitystarttime=" + activitystarttime +
                 ", activityendtime=" + activityendtime +
                 ", productid=" + productid +
-                ", activetytype=" + activetytype +
+                ", activetytype=" + activitytype +
                 '}';
     }
 
@@ -87,11 +87,11 @@ public class Activity {
     }
 
     public Integer getActivetytype() {
-        return activetytype;
+        return activitytype;
     }
 
     public void setActivetytype(Integer activetytype) {
-        this.activetytype = activetytype;
+        this.activitytype = activetytype;
     }
 
     public Activity() {
@@ -107,6 +107,6 @@ public class Activity {
         this.activitystarttime = activitystarttime;
         this.activityendtime = activityendtime;
         this.productid = productid;
-        this.activetytype = activetytype;
+        this.activitytype = activetytype;
     }
 }

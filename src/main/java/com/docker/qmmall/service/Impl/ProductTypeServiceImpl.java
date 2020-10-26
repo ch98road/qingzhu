@@ -34,9 +34,7 @@ public class ProductTypeServiceImpl implements ProductTypeService {
     @Override
     public Integer deleteType(Integer id) {
         ProductType productType = new ProductType(id,null,null);
-
         return productTypeMapper.deleteType(productType);
-
     }
 
     @Override

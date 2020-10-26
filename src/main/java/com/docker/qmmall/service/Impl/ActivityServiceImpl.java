@@ -50,11 +50,26 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
-    public Map<String,Object> getActivity(String activitystate, String activetytype) {
-        Activity activity = new Activity();
+    public Map<String,Object> getActivity() {
         Map<String,Object> res = new HashMap<>();
         res.put("res",100);
-        res.put("data",activityMapper.getActivity(activity));
+        Map<String,Object> data = new HashMap<>();
+
+        int type=0;
+        LinkedList<Activity> tmp = new LinkedList<>();
+        for (Activity a:activityMapper.getActivity(new Activity())
+             ) {
+            if (a.getActivetytype()!=type&&type>0){
+                data.put("type-"+Integer.toString(type),tmp);
+                type = a.getActivetytype();
+                tmp = new LinkedList<>();
+            }else if(a.getActivetytype()!=type&&type==0){
+                type = a.getActivetytype();
+            }
+            tmp.push(a);
+        }
+        data.put("type-"+Integer.toString(type),tmp);
+        res.put("data",data);
         return res;
     }
 }

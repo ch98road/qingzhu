@@ -28,9 +28,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Map<String,Object> getproduct(Integer producttype) {
+    public Map<String,Object> getproduct() {
         Product product = new Product( );
-        product.setProducttype(producttype);
         Map<String,Object> res = new HashMap<>();
         res.put("res",100);
         res.put("data",productMapper.getProductProfile(product));
@@ -38,13 +37,21 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Map<String,Object> getproductdetail(Integer producttype) {
+    public Map<String,Object> getproductdetail() {
         Product product = new Product( );
-        product.setProducttype(producttype);
-        product.setProducttype(producttype);
         Map<String,Object> res = new HashMap<>();
         res.put("res",100);
         res.put("data",productMapper.getProduct(product));
+        return res;
+    }
+
+    @Override
+    public Map<String, Object> getproductbyId(Integer productid) {
+        Product product = new Product( );
+        product.setProductid(productid);
+        Map<String,Object> res = new HashMap<>();
+        res.put("res",100);
+        res.put("data",productMapper.getProductById(product));
         return res;
     }
 }
