@@ -1,35 +1,39 @@
 package com.docker.qmmall.controller;
 
 import com.docker.qmmall.model.Shoppingcart;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.docker.qmmall.service.Impl.ShoppingCartServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/23.
  */
 @RestController
 @RequestMapping("/cart")
+@CrossOrigin
 public class CartController {
 
-//    private Integer userid;
+    //    private Integer userid;
 //    private String productinfo;
+    @Autowired
+    ShoppingCartServiceImpl shoppingCartService;
+
     @PostMapping("/get")
-    public LinkedList<Shoppingcart> getCart(@RequestParam("userid") Integer userid) {
-        return null;
+    public Map<String, Object> getCart(@RequestParam("userid") Integer userid) {
+        return shoppingCartService.getCart(userid);
     }
 
     @PostMapping("/add")
-    public Integer addCart(@RequestParam("userid") Integer userid,@RequestParam("productinfo") String productinfo) {
-        return null;
+    public Integer addCart(@RequestParam("userid") Integer userid, @RequestParam("productinfo") String productinfo) {
+        return shoppingCartService.addCart(userid, productinfo);
     }
 
     @PostMapping("/update")
-    public Integer updateCart() {
-        return null;
+    public Integer updateCart(@RequestParam("userid") Integer userid, @RequestParam("productinfo") String productinfo) {
+        return shoppingCartService.updateCart(userid, productinfo);
     }
 
 

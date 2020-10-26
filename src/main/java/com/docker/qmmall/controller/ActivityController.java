@@ -3,10 +3,7 @@ package com.docker.qmmall.controller;
 import com.docker.qmmall.model.Activity;
 import com.docker.qmmall.service.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -18,6 +15,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/activity")
+@CrossOrigin
 public class ActivityController {
 
 
@@ -45,7 +43,7 @@ public class ActivityController {
     }
 
     @PostMapping("/get")
-    public LinkedList<Activity> getActivity(@RequestParam("activitystate") String activitystate, @RequestParam("activetytype") String activetytype) {
+    public Map<String,Object> getActivity(@RequestParam("activitystate") String activitystate, @RequestParam("activetytype") String activetytype) {
         return activityService.getActivity(activitystate,activetytype);
     }
 

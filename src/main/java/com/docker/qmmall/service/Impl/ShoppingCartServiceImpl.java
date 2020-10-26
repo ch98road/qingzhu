@@ -4,6 +4,7 @@ import com.docker.qmmall.mapper.CartMapper;
 import com.docker.qmmall.model.Shoppingcart;
 import com.docker.qmmall.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -12,6 +13,7 @@ import java.util.Map;
 /**
  * Created by CHEN on 2020/10/26.
  */
+@Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Autowired

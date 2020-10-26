@@ -4,19 +4,18 @@ import com.docker.qmmall.model.Product;
 import com.docker.qmmall.service.Impl.ProductServiceImpl;
 import com.docker.qmmall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/23.
  */
 @RestController
 @RequestMapping("/product")
+@CrossOrigin
 public class ProductController {
 
 
@@ -56,7 +55,7 @@ public class ProductController {
      * @return
      */
     @PostMapping("/get")
-    public LinkedList<Product> getproduct(@RequestParam("producttype") Integer producttype) {
+    public Map<String,Object> getproduct(@RequestParam("producttype") Integer producttype) {
         return productService.getproduct(producttype);
     }
 
@@ -67,7 +66,7 @@ public class ProductController {
      * @return
      */
     @PostMapping("/getdetail")
-    public LinkedList<Product> getproductdetail(@RequestParam("producttype") Integer producttype) {
+    public Map<String,Object> getproductdetail(@RequestParam("producttype") Integer producttype) {
         return productService.getproductdetail(producttype);
     }
 

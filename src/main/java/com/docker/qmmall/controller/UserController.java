@@ -5,16 +5,14 @@ import com.docker.qmmall.model.User;
 import com.docker.qmmall.service.Impl.UserServiceImpl;
 import com.docker.qmmall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by CHEN on 2020/10/23.
  */
 @RestController
 @RequestMapping("/user")
+@CrossOrigin
 public class UserController {
 
 

@@ -3,18 +3,17 @@ package com.docker.qmmall.controller;
 import com.docker.qmmall.model.ProductType;
 import com.docker.qmmall.service.Impl.ProductTypeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created by CHEN on 2020/10/23.
  */
 @RestController
 @RequestMapping("/productType")
+@CrossOrigin
 public class ProductTypeController {
 
     //    private Integer id;
@@ -40,7 +39,7 @@ public class ProductTypeController {
         return productTypeService.deleteType(id);
     }
     @PostMapping("/get")
-    public LinkedList<ProductType> getTpye() {
+    public Map<String,Object> getTpye() {
         return productTypeService.getTpye();
     }
 
