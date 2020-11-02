@@ -29,11 +29,11 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public Integer addCart(Integer userid, String productinfo) {
-        return cartMapper.addCart(new Shoppingcart(userid,productinfo));
+        return cartMapper.addCart(new Shoppingcart(userid,productinfo))==1?100:101;
     }
 
     @Override
     public Integer updateCart(Integer userid, String productinfo) {
-        return cartMapper.updateCart(new Shoppingcart(userid,productinfo));
+        return cartMapper.updateCart(new Shoppingcart(userid,productinfo))==1?100:101;
     }
 }

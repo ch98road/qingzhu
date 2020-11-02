@@ -12,7 +12,7 @@
     <!--Integer update(Shoppingcart shoppingcart);-->
     <!--LinkedList<Shoppingcart> getCart(Shoppingcart shoppingcart);-->
     <insert id="addCart">
-        INSERT  INTO shoppingcart(user_id,productinfo) VALUES ('${user_id}','${productinfo}');
+        INSERT  INTO tb_cart(userid,productinfo) VALUES ('${userid}','${productinfo}');
     </insert>
 
     <!--Integer addCart(Shoppingcart shoppingcart);-->

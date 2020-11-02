@@ -7,7 +7,11 @@ import java.util.Map;
  * Created by CHEN on 2020/10/26.
  */
 public interface OrderService {
-    public Integer commitOrder(Double totalprice, String user, Integer paymentstatus, String productinfo, String address);
-    public Integer updateOrder(Double totalprice, Integer paymentstatus, String address,  Integer payway);
-    public Map<String,Object> getOrder(Integer id);
+    Integer commitOrder(Double totalprice, String user, Integer paymentstatus, String productinfo, String address, Integer payway);
+
+    Integer updateOrder(Integer id, Integer paymentstatus);
+
+    Map<String, Object> getOrder(Integer id);
+
+    Map<String, Object> getOrderByName(String user_name,Integer paymentstatus);
 }

@@ -30,16 +30,17 @@ public class OrderController {
     OrderService orderService;
 
     @PostMapping("/commit")
-    public Integer commitOrder(@RequestParam("totalprice") Double totalprice, @RequestParam("user") String user, @RequestParam("paymentstatus") Integer paymentstatus,
-                               @RequestParam("productinfo") String productinfo, @RequestParam("address") String address
+    public Integer commitOrder(@RequestParam("totalprice") Double totalprice, @RequestParam("user") String user,
+                               @RequestParam("paymentstatus") Integer paymentstatus, @RequestParam("productinfo") String productinfo,
+                               @RequestParam("payway")Integer payway,@RequestParam("address") String address
     ) {
-        return orderService.commitOrder(totalprice, user, paymentstatus, productinfo, address);
+        return orderService.commitOrder(totalprice, user, paymentstatus, productinfo, address,payway);
     }
 
     @PostMapping("/update")
-    public Integer updateOrder(@RequestParam("totalprice")Double totalprice, @RequestParam("paymentstatus")Integer paymentstatus,
-                              @RequestParam("address")String address,  @RequestParam("payway")Integer payway) {
-        return orderService.updateOrder( totalprice,  paymentstatus,  address,   payway);
+    public Integer updateOrder( @RequestParam("id")Integer id,@RequestParam("paymentstatus")Integer paymentstatus
+                              ) {
+        return orderService.updateOrder( id, paymentstatus  );
     }
 
     @PostMapping("/get")
@@ -47,5 +48,9 @@ public class OrderController {
         return orderService.getOrder(id);
     }
 
+    @PostMapping("/getByUid")
+    public Map<String, Object> getOrderByName(@RequestParam("user_name")String user_name,@RequestParam("paymentstatus")Integer paymentstatus) {
+        return orderService.getOrderByName(user_name,paymentstatus);
+    }
 
 }

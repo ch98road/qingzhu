@@ -2,6 +2,8 @@ package com.docker.qmmall.service;
 
 import com.docker.qmmall.model.User;
 
+import java.util.Map;
+
 /**
  * Created by CHEN on 2020/10/26.
  */
@@ -20,8 +22,8 @@ public interface UserService {
     /**
      * 注册功能
      */
-    Integer register(String user_name, String user_nick, String user_password, String user_telephone,
-                     String user_icon, String user_address, Integer user_sex, String user_email);
+    Map<String,Object> register(String user_name, String user_nick, String user_password, String user_telephone,
+                 String user_icon, String user_address, Integer user_sex, String user_email);
 
     /**
      * 登录功能,返回token

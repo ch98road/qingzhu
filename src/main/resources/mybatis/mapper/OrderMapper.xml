@@ -18,15 +18,14 @@
     <update id="updateOrder">
         UPDATE tb_order
         SET  paymentstatus = '${paymentstatus}',
-          finishtime = now(),
-          payway = '${payway}',
+          finishtime = now()
         WHERE '${id}'=id;
     </update>
 
     <!--Integer commitOrder(Order order);-->
     <insert id="commitOrder" parameterType="com.docker.qmmall.model.Order" useGeneratedKeys="true" keyProperty="id">
-        INSERT  INTO tb_order(totalprice,user,paymentstatus,productinfo,address,ordertime)
-                VALUES ('${totalprice}','${user}','${paymentstatus}','${productinfo}','${address}',now());
+        INSERT  INTO tb_order(totalprice,user,paymentstatus,productinfo,address,ordertime,payway)
+                VALUES ('${totalprice}','${user}','${paymentstatus}','${productinfo}','${address}',now(),'${payway}');
     </insert>
 
     <!--LinkedList<Order> getOrder(Order order);-->

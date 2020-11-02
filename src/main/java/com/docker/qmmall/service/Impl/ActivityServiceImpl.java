@@ -60,7 +60,7 @@ public class ActivityServiceImpl implements ActivityService {
         for (Activity a:activityMapper.getActivity(new Activity())
              ) {
             if (a.getActivetytype()!=type&&type>0){
-                data.put("type-"+Integer.toString(type),tmp);
+                data.put("type"+Integer.toString(type),tmp);
                 type = a.getActivetytype();
                 tmp = new LinkedList<>();
             }else if(a.getActivetytype()!=type&&type==0){
@@ -68,7 +68,7 @@ public class ActivityServiceImpl implements ActivityService {
             }
             tmp.push(a);
         }
-        data.put("type-"+Integer.toString(type),tmp);
+        data.put("type"+Integer.toString(type),tmp);
         res.put("data",data);
         return res;
     }

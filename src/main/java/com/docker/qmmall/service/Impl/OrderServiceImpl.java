@@ -19,24 +19,37 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     OrderMapper orderMapper;
     @Override
-    public Integer commitOrder(Double totalprice, String user, Integer paymentstatus, String productinfo, String address) {
+    public Integer commitOrder(Double totalprice, String user, Integer paymentstatus, String productinfo, String address,  Integer payway) {
 
-        Order order = new Order(null,  totalprice,  user,  paymentstatus,  productinfo,  address,  null, null,null);
+        Order order = new Order(null,  totalprice,  user,  paymentstatus,  productinfo,  address,  null, null,payway);
+
         orderMapper.commitOrder(order);
         return order.getId();
     }
 
     @Override
-    public Integer updateOrder(Double totalprice, Integer paymentstatus, String address,  Integer payway) {
-        Order order = new Order(null,  totalprice,  null,  paymentstatus,  null,  address,  null, null,null);
-        orderMapper.commitOrder(order);
-        return order.getId();
+    public Integer updateOrder(Integer id, Integer paymentstatus) {
+        Order order = new Order(id,  null,  null,  paymentstatus,  null, null ,  null, null,null);
+        return orderMapper.updateOrder(order)==1?100:101;
     }
 
     @Override
     public Map<String,Object> getOrder(Integer id) {
         Order order = new Order();
         order.setId(id);
+        Map<String,Object> res = new HashMap<>();
+        res.put("res",100);
+        res.put("data",orderMapper.getOrder(order));
+        return res;
+    }
+
+    @Override
+    public Map<String, Object> getOrderByName(String user_name,Integer paymentstatus) {
+
+        Order order = new Order();
+        order.setUser(user_name);
+        if (paymentstatus!=-1)
+            order.setPaymentstatus(paymentstatus);
         Map<String,Object> res = new HashMap<>();
         res.put("res",100);
         res.put("data",orderMapper.getOrder(order));

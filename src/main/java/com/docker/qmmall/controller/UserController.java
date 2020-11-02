@@ -7,6 +7,8 @@ import com.docker.qmmall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 /**
  * Created by CHEN on 2020/10/23.
  */
@@ -25,9 +27,9 @@ public class UserController {
      * @return
      */
     @PostMapping("/register")
-    public Integer register(@RequestParam("user_name") String user_name, @RequestParam("user_nick") String user_nick, @RequestParam("user_password") String user_password,
-                            @RequestParam("user_telephone") String user_telephone, @RequestParam("user_icon") String user_icon, @RequestParam("user_address") String user_address,
-                            @RequestParam("user_sex") Integer user_sex, @RequestParam("user_email") String user_email) {
+    public Map<String, Object> register(@RequestParam("user_name") String user_name, @RequestParam("user_nick") String user_nick, @RequestParam("user_password") String user_password,
+                        @RequestParam("user_telephone") String user_telephone, @RequestParam("user_icon") String user_icon, @RequestParam("user_address") String user_address,
+                        @RequestParam("user_sex") Integer user_sex, @RequestParam("user_email") String user_email) {
         return userService.register(user_name, user_nick, user_password, user_telephone, user_icon,
                 user_address, user_sex, user_email);
     }
@@ -53,8 +55,10 @@ public class UserController {
     public Integer updateUserInfo(@RequestParam("user_name") String user_name, @RequestParam("user_nick") String user_nick, @RequestParam("user_password") String user_password,
                             @RequestParam("user_telephone") String user_telephone, @RequestParam("user_icon") String user_icon, @RequestParam("user_address") String user_address,
                             @RequestParam("user_sex") Integer user_sex, @RequestParam("user_email") String user_email) {
-        return userService.update(user_name, user_nick, user_password, user_telephone, user_icon,
+        return userService.update(user_name,user_password ,user_nick , user_telephone, user_icon,
                 user_address, user_sex, user_email);
+//        return userService.update(user_name, user_nick, user_password, user_telephone, user_icon,
+//                user_address.replaceAll("\"","^"), user_sex, user_email);
     }
 
 

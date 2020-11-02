@@ -55,7 +55,13 @@ logging:
         qmmall:
           mapper: debug
 
-
+# 七牛云存储
+oss:
+  qiniu:
+    domain: http://hn-bkt-clouddn-com-idvcz9d.www.qiniudns.com # 访问域名(默认使用七牛云测试域名)
+    accessKey: 3WhI6g6ds9vo0Gw6V87rsNJfvXKOdwM6GWxf8gl4 # 公钥
+    secretKey: bKpVR3TrwOhkPWwyaEgsFwrDutzbeF4uH9oB0kpz # 私钥
+    bucketName: qzmall  #存储空间名称
 
 adminster:
   username: admin
