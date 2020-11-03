@@ -10,4 +10,6 @@ import java.util.Map;
  */
 public interface ProductBrandService {
     Map<String, Object> getProductBrand();
+
+    Integer addProductBrand(String productbrand);
 }

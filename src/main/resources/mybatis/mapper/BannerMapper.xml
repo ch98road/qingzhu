@@ -10,10 +10,11 @@
     <!--private String prodicid;-->
 
     <!--Integer addBanner(Banner banner);-->
-    <insert id="addBanner">
-    INSERT  INTO tb_banner(banner_pic,banner_pic,prodicid)
-    VALUES ('${banner_pic}','${banner_pic}','${prodicid}');
-</insert>
+    <insert id="addBanner" parameterType="com.docker.qmmall.model.Banner" useGeneratedKeys="true"
+            keyProperty="banner_id">
+    INSERT  INTO tb_banner(banner_pic,productid)
+    VALUES ('${banner_pic}','${productid}');
+    </insert>
 
     <!--LinkedList getBanner(Banner banner);-->
     <!--<select id="getBanner" resultType="java.util.LinkedList">-->

@@ -5,10 +5,7 @@ import com.docker.qmmall.service.Impl.ProductBrandServiceImpl;
 import com.docker.qmmall.service.ProductBrandService;
 import com.docker.qmmall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedList;
 import java.util.Map;
@@ -26,5 +23,10 @@ public class ProductBrandController {
     @PostMapping("/get")
     public Map<String,Object> getProductBrand() {
         return productBrandService.getProductBrand();
+    }
+
+    @PostMapping("/add")
+    public Integer getProductBrand(@RequestParam("productbrand")String productbrand) {
+        return productBrandService.addProductBrand(productbrand);
     }
 }

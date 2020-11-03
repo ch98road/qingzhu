@@ -23,9 +23,10 @@ public class BannerController {
 
     @Autowired
     BannerServiceImpl bannerService;
-    Integer addBanner(@RequestParam("banner_pic") String banner_pic,@RequestParam("prodicid") String prodicid) {
 
-        return null;
+    @PostMapping("/add")
+    Integer addBanner(@RequestParam("banner_pic") String banner_pic,@RequestParam("productid") Integer productid) {
+        return bannerService.addBanner(banner_pic,productid);
     }
 
     @PostMapping("/get")

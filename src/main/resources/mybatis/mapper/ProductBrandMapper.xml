@@ -5,9 +5,13 @@
 <mapper namespace="com.docker.qmmall.mapper.ProductBrandMapper">
 
 
-    <!--private Integer banner_id;-->
-    <!--private String banner_pic;-->
-    <!--private String prodicid;-->
+
+    <!--Integer addProductBrand(ProductBrand productBrand);-->
+    <insert id="addProductBrand" parameterType="com.docker.qmmall.model.ProductBrand" useGeneratedKeys="true"
+            keyProperty="id">
+        INSERT  INTO tb_productbrand(productbrand)
+        VALUES ('${productbrand}');
+    </insert>
 
     <!--LinkedLProductBrandServicerand> getProductBrand();-->
     <select id="getProductBrand" resultType="com.docker.qmmall.model.ProductBrand">

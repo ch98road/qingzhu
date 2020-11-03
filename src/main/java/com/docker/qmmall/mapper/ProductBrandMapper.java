@@ -9,4 +9,6 @@ import java.util.LinkedList;
  */
 public interface ProductBrandMapper {
     LinkedList<ProductBrand> getProductBrand();
+
+    Integer addProductBrand(ProductBrand productBrand);
 }

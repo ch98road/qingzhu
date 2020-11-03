@@ -19,8 +19,8 @@ public class BannerServiceImpl implements BannerService {
     @Autowired
     BannerMapper bannerMapper;
     @Override
-    public Integer addBanner(String banner_pic, String prodicid) {
-        Banner banner = new Banner(null,banner_pic,prodicid);
+    public Integer addBanner(String banner_pic, Integer productid) {
+        Banner banner = new Banner(null,banner_pic,productid);
         bannerMapper.addBanner(banner);
         return banner.getBanner_id();
     }

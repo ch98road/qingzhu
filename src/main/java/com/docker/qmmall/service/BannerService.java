@@ -11,6 +11,6 @@ import java.util.Map;
  */
 public interface BannerService {
 
-    Integer addBanner(String banner_pic,String prodicid);
+    Integer addBanner(String banner_pic,Integer productid);
     Map<String,Object> getBanner();
 }

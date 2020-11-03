@@ -6,6 +6,7 @@ import com.docker.qmmall.service.ProductBrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.MalformedInputException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -25,5 +26,12 @@ public class ProductBrandServiceImpl implements ProductBrandService {
         res.put("res",100);
         res.put("data",productBrandMapper.getProductBrand());
         return res;
+    }
+
+    @Override
+    public Integer addProductBrand(String productbrand) {
+        ProductBrand productBrand = new ProductBrand(null,productbrand);
+        productBrandMapper.addProductBrand(productBrand);
+        return productBrand.getId();
     }
 }

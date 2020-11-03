@@ -40,9 +40,14 @@ public class ProductController {
      * @return
      */
     @PostMapping("/add")
-    public Integer addproduct(@RequestParam("productname") String productname, @RequestParam("productprice") Float productprice, @RequestParam("productpic") String productpic,
-                              @RequestParam("productcount") Integer productcount, @RequestParam("productsallcount") Integer productsallcount, @RequestParam("producttype") Integer producttype,
-                              @RequestParam("productbrandid") Integer productbrandid, @RequestParam("productstate") Integer productstate,
+    public Integer addproduct(@RequestParam("productname") String productname,
+                              @RequestParam("productprice") Float productprice,
+                              @RequestParam("productpic") String productpic,
+                              @RequestParam("productcount") Integer productcount,
+                              @RequestParam("productsallcount") Integer productsallcount,
+                              @RequestParam("producttype") Integer producttype,
+                              @RequestParam("productbrandid") Integer productbrandid,
+                              @RequestParam("productstate") Integer productstate,
                               @RequestParam("productdes") String productdes) {
         return productService.addproduct(productname, productprice, productpic, productcount, productsallcount, producttype, productbrandid, productstate, productdes);
     }
@@ -51,9 +56,15 @@ public class ProductController {
      * 修改商品信息
      */
     @PostMapping("/update")
-    public Integer updateproduct(@RequestParam("productid") Integer productid, @RequestParam("productname") String productname, @RequestParam("productprice") Float productprice, @RequestParam("productpic") String productpic,
-                                 @RequestParam("productcount") Integer productcount, @RequestParam("productsallcount") Integer productsallcount, @RequestParam("producttype") Integer producttype,
-                                 @RequestParam("productbrandid") Integer productbrandid, @RequestParam("productstate") Integer productstate,
+    public Integer updateproduct(@RequestParam("productid") Integer productid,
+                                 @RequestParam("productname") String productname,
+                                 @RequestParam("productprice") Float productprice,
+                                 @RequestParam("productpic") String productpic,
+                                 @RequestParam("productcount") Integer productcount,
+                                 @RequestParam("productsallcount") Integer productsallcount,
+                                 @RequestParam("producttype") Integer producttype,
+                                 @RequestParam("productbrandid") Integer productbrandid,
+                                 @RequestParam("productstate") Integer productstate,
                                  @RequestParam("productdes") String productdes) {
         return productService.updateproduct(productid, productname, productprice, productpic, productcount, productsallcount, producttype, productbrandid, productstate, productdes) == 1 ? 100 : 101;
     }
@@ -62,7 +73,8 @@ public class ProductController {
      * 修改商品信息
      */
     @PostMapping("/updateState")
-    public Integer updateproductState(@RequestParam("productid") Integer productid, @RequestParam("productstate") Integer productstate) {
+    public Integer updateproductState(@RequestParam("productid") Integer productid,
+                                      @RequestParam("productstate") Integer productstate) {
         return productService.updateproductState(productid, productstate) == 1 ? 100 : 101;
     }
 

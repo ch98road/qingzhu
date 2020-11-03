@@ -25,22 +25,21 @@ public class ProductTypeController {
     @PostMapping("/add")
     public Integer addType(@RequestParam("name") String name, @RequestParam("type") Integer type) {
         return productTypeService.addType(name, type);
-
     }
 
     @PostMapping("/update")
     public Integer updateType(@RequestParam("name") String name, @RequestParam("type") Integer type) {
         return productTypeService.updateType(name, type);
-
     }
 
     @PostMapping("/delete")
     public Integer deleteType(@RequestParam("id") Integer id) {
         return productTypeService.deleteType(id);
     }
+
     @PostMapping("/get")
-    public Map<String,Object> getTpye() {
-        return productTypeService.getTpye();
+    public Map<String, Object> getTpye() {
+        return productTypeService.getTpye( );
     }
 
 }
