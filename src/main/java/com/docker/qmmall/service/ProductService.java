@@ -12,11 +12,17 @@ import java.util.Map;
  */
 public interface ProductService {
 
-    Integer addproduct(String productname, Float productprice, String productpic, Integer productcount, Integer productsallcount, Integer producttype, Date producttime, Integer productbrandid, Integer productstate, String productdes);
+    Integer addproduct(String productname, Float productprice, String productpic, Integer productcount, Integer productsallcount, Integer producttype, Integer productbrandid, Integer productstate, String productdes);
+
+    Integer updateproduct(Integer productid, String productname, Float productprice, String productpic, Integer productcount, Integer productsallcount, Integer producttype, Integer productbrandid, Integer productstate, String productdes);
+
+    Integer updateproductState(Integer productid, Integer productstate);
 
     Map<String, Object> getproduct();
 
     Map<String, Object> getproductdetail();
 
-    Map<String, Object> getproductbyId(Integer productid);
+    Map<String, Object> getproductById(Integer productid);
+
+    Map<String, Object> getproductByState(Integer productstate);
 }

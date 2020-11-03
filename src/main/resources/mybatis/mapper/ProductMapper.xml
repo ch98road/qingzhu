@@ -20,8 +20,52 @@
 
     <insert id="addProduct" parameterType="com.docker.qmmall.model.Product" useGeneratedKeys="true" keyProperty="productid">
         INSERT  INTO tb_product(productname,productprice,productpic,productcount,productsallcount,producttype,producttime,productbrandid,productstate,productdes)
-                VALUES ('${productname}','${productprice}','${productpic}','${productcount}','${productsallcount}','${producttype}','${producttime}','${productbrandid}','${productstate}','${productdes}')
+                VALUES ('${productname}','${productprice}','${productpic}','${productcount}','${productsallcount}','${producttype}',now(),'${productbrandid}','${productstate}','${productdes}')
     </insert>
+
+
+    <!--Integer updateProduct(Product product);-->
+    <update id="updateProduct">
+        UPDATE tb_product
+        <set>
+            productstate = '${productstate}'
+            <if test="productname!=null">
+                , productname = '${productname}'
+            </if>
+            <if test="productprice!=null">
+                , productprice = '${productprice}'
+            </if>
+            <if test="productpic!=null">
+                , productpic = '${productpic}'
+            </if>
+            <if test="productcount!=null">
+                , productcount = '${productcount}'
+            </if>
+            <if test="productsallcount!=null">
+                , productsallcount = '${productsallcount}'
+            </if>
+            <if test="producttype!=null">
+                , producttype = '${producttype}'
+            </if>
+            <if test="productbrandid!=null">
+                , productbrandid = '${productbrandid}'
+            </if>
+            <if test="productdes!=null">
+                , productdes = '${productdes}'
+            </if>
+        </set>
+        WHERE productid= '${productid}';
+    </update>
+
+    <!--Integer updateProductState(Product product);-->
+    <update id="updateProductState">
+        UPDATE tb_product
+        SET productstate = '${productstate}'
+        WHERE productid= '${productid}';
+    </update>
+
+
+
 
     <!--LinkedList<Product> getProduct(Product product);-->
     <select id="getProduct" resultType="com.docker.qmmall.model.Product">
@@ -47,5 +91,11 @@
     <select id="getProductById" resultType="com.docker.qmmall.model.Product">
         SELECT * FROM tb_product
         WHERE productid= '${productid}';
+    </select>
+
+    <!--LinkedList<Product> getProductByState(Product product);-->
+    <select id="getProductByState" resultType="com.docker.qmmall.model.Product">
+        SELECT * FROM tb_product
+        WHERE productstate= '${productstate}';
     </select>
 </mapper>
