@@ -36,4 +36,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     public Integer updateCart(Integer userid, String productinfo) {
         return cartMapper.updateCart(new Shoppingcart(userid,productinfo))==1?100:101;
     }
+
+
 }

@@ -55,4 +55,9 @@
         SELECT * FROM  tb_user
         WHERE  user_telephone='${user_telephone}';
     </select>
+
+    <!--LinkedList<User> getAllUser();-->
+    <select id="getAllUser" resultType="com.docker.qmmall.model.User">
+        SELECT * FROM  tb_user;
+    </select>
 </mapper>

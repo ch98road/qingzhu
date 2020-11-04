@@ -1,9 +1,7 @@
 package com.docker.qmmall.controller;
 
-import com.docker.qmmall.mapper.UserMapper;
 import com.docker.qmmall.model.User;
 import com.docker.qmmall.service.Impl.UserServiceImpl;
-import com.docker.qmmall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -73,4 +71,13 @@ public class UserController {
         return userService.getItem(user_telephone);
     }
 
+    /**
+     * 获取所有用户信息
+     *
+     * @return
+     */
+    @PostMapping("/getAllUser")
+    public Map<String, Object> getUser( ) {
+        return userService.getAllUser();
+    }
 }

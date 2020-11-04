@@ -53,7 +53,7 @@ public class ProductController {
     }
 
     /**
-     * 修改商品信息
+     * 修改商品信息,商品上下架
      */
     @PostMapping("/update")
     public Integer updateproduct(@RequestParam("productid") Integer productid,

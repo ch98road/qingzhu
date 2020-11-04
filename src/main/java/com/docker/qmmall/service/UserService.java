@@ -43,5 +43,9 @@ public interface UserService {
     Integer update(String user_name, String user_password, String user_nick, String user_telephone, String user_icon,
                    String user_address, Integer user_sex, String user_email);
 
+    /**
+     * 拿到所有User
+     */
+    Map<String,Object> getAllUser();
 
 }

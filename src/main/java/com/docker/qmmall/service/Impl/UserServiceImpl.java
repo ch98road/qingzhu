@@ -72,4 +72,12 @@ public class UserServiceImpl implements UserService {
         return userMapper.update(user)==1?100:101;
     }
 
+    @Override
+    public Map<String, Object> getAllUser() {
+        Map<String,Object> res = new HashMap<>();
+        res.put("res",100);
+        res.put("data",userMapper.getAllUser());
+        return res;
+    }
+
 }

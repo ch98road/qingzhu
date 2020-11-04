@@ -11,10 +11,10 @@ import java.util.Map;
  * Created by CHEN on 2020/10/26.
  */
 public interface ShoppingCartService {
-    public Map<String,Object> getCart(Integer userid);
+    Map<String, Object> getCart(Integer userid);
 
-    public Integer addCart( Integer userid, String productinfo);
+    Integer addCart(Integer userid, String productinfo);
 
-    public Integer updateCart(Integer userid, String productinfo);
+    Integer updateCart(Integer userid, String productinfo);
 
 }
