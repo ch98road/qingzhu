@@ -17,8 +17,8 @@
 
     <!--Integer addActivity(Activity activity);-->
     <insert id="addActivity">
-        INSERT  INTO tb_activity(activityname,activitystate,activitypic,activitystarttime,activityendtime,productid,activetytype)
-        VALUES ('${activityname}','${activitystate}','${activitypic}','${activitystarttime}','${activityendtime}','${productid}','${activetytype}');
+        INSERT  INTO tb_activity(activityname,activitystate,activitypic,activitystarttime,activityendtime,productid,activitytype)
+        VALUES ('${activityname}','${activitystate}','${activitypic}','${activitystarttime}','${activityendtime}','${productid}','${activitytype}');
     </insert>
 
     <!--Integer updateActivity(Activity activity);-->

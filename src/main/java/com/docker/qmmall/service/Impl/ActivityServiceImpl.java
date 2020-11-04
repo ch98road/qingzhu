@@ -6,6 +6,8 @@ import com.docker.qmmall.service.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -22,20 +24,18 @@ public class ActivityServiceImpl implements ActivityService {
 
 
     @Override
-    public Integer addActivity(String activityname, Integer activitystate, String activitypic, Date activitystarttime,
-                               Date activityendtime, Integer productid, Integer activetytype) {
+    public Integer addActivity(String activityname, Integer activitystate, String activitypic, String activitystarttime,
+                               String activityendtime, Integer productid, Integer activetytype) {
 
         Activity activity = new Activity(null, activityname, activitystate, activitypic, activitystarttime,
                 activityendtime, productid, activetytype);
-
-
 
         return activityMapper.addActivity(activity);
     }
 
     @Override
-    public Integer updateActivity(String activityname, Integer activitystate, String activitypic, Date activitystarttime,
-                                 Date activityendtime, Integer productid, Integer activetytype) {
+    public Integer updateActivity(String activityname, Integer activitystate, String activitypic, String activitystarttime,
+                                  String activityendtime, Integer productid, Integer activetytype) {
         Activity activity = new Activity(null, activityname, activitystate, activitypic, activitystarttime,
                 activityendtime, productid, activetytype);
         return activityMapper.updateActivity(activity);

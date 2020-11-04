@@ -1,5 +1,7 @@
 package com.docker.qmmall.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 /**
@@ -11,8 +13,8 @@ public class Activity {
     private String activityname;
     private Integer activitystate;
     private String activitypic;
-    private Date activitystarttime;
-    private Date activityendtime;
+    private String activitystarttime;
+    private String activityendtime;
     private Integer productid;
     private Integer activitytype;
 
@@ -62,19 +64,31 @@ public class Activity {
         this.activitypic = activitypic;
     }
 
-    public Date getActivitystarttime() {
+    public Activity(Integer activityid, String activityname, Integer activitystate, String activitypic, String activitystarttime, String activityendtime, Integer productid, Integer activitytype) {
+        this.activityid = activityid;
+        this.activityname = activityname;
+        this.activitystate = activitystate;
+        this.activitypic = activitypic;
+        this.activitystarttime = activitystarttime;
+        this.activityendtime = activityendtime;
+        this.productid = productid;
+        this.activitytype = activitytype;
+    }
+
+    public String getActivitystarttime() {
+
         return activitystarttime;
     }
 
-    public void setActivitystarttime(Date activitystarttime) {
+    public void setActivitystarttime(String activitystarttime) {
         this.activitystarttime = activitystarttime;
     }
 
-    public Date getActivityendtime() {
+    public String getActivityendtime() {
         return activityendtime;
     }
 
-    public void setActivityendtime(Date activityendtime) {
+    public void setActivityendtime(String activityendtime) {
         this.activityendtime = activityendtime;
     }
 
@@ -84,6 +98,14 @@ public class Activity {
 
     public void setProductid(Integer productid) {
         this.productid = productid;
+    }
+
+    public Integer getActivitytype() {
+        return activitytype;
+    }
+
+    public void setActivitytype(Integer activitytype) {
+        this.activitytype = activitytype;
     }
 
     public Integer getActivetytype() {
@@ -98,15 +120,5 @@ public class Activity {
 
     }
 
-    public Activity(Integer activityid, String activityname, Integer activitystate, String activitypic, Date activitystarttime, Date activityendtime, Integer productid, Integer activetytype) {
 
-        this.activityid = activityid;
-        this.activityname = activityname;
-        this.activitystate = activitystate;
-        this.activitypic = activitypic;
-        this.activitystarttime = activitystarttime;
-        this.activityendtime = activityendtime;
-        this.productid = productid;
-        this.activitytype = activetytype;
-    }
 }

@@ -24,17 +24,16 @@ public class ActivityController {
 
     @PostMapping("/add")
     public Integer addActivity(@RequestParam("activityname") String activityname, @RequestParam("activitystate") Integer activitystate, @RequestParam("activitypic") String activitypic,
-                               @RequestParam("activitystarttime") Date activitystarttime, @RequestParam("activityendtime") Date activityendtime, @RequestParam("productid") Integer productid,
+                               @RequestParam("activitystarttime") String activitystarttime, @RequestParam("activityendtime") String activityendtime, @RequestParam("productid") Integer productid,
                                @RequestParam("activetytype") Integer activetytype) {
 
         return activityService.addActivity(activityname, activitystate, activitypic, activitystarttime, activityendtime, productid, activetytype);
     }
     @PostMapping("/update")
     public Integer updateActivity(@RequestParam("activityname") String activityname, @RequestParam("activitystate") Integer activitystate, @RequestParam("activitypic") String activitypic,
-                                  @RequestParam("activitystarttime") Date activitystarttime, @RequestParam("activityendtime") Date activityendtime, @RequestParam("productid") Integer productid,
+                                  @RequestParam("activitystarttime") String activitystarttime, @RequestParam("activityendtime") String activityendtime, @RequestParam("productid") Integer productid,
                                   @RequestParam("activetytype") Integer activetytype) {
         return activityService.updateActivity(activityname, activitystate, activitypic, activitystarttime, activityendtime, productid, activetytype);
-
     }
 
     @PostMapping("/delete")

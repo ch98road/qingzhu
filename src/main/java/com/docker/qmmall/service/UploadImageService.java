@@ -1,6 +1,5 @@
 package com.docker.qmmall.service;
 
-import com.docker.qmmall.util.CloudStorageConfig;
 
 import java.io.FileInputStream;
 
