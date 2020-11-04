@@ -26,8 +26,8 @@ public class UserController {
      */
     @PostMapping("/register")
     public Map<String, Object> register(@RequestParam("user_name") String user_name, @RequestParam("user_nick") String user_nick, @RequestParam("user_password") String user_password,
-                        @RequestParam("user_telephone") String user_telephone, @RequestParam("user_icon") String user_icon, @RequestParam("user_address") String user_address,
-                        @RequestParam("user_sex") Integer user_sex, @RequestParam("user_email") String user_email) {
+                                        @RequestParam("user_telephone") String user_telephone, @RequestParam("user_icon") String user_icon, @RequestParam("user_address") String user_address,
+                                        @RequestParam("user_sex") Integer user_sex, @RequestParam("user_email") String user_email) {
         return userService.register(user_name, user_nick, user_password, user_telephone, user_icon,
                 user_address, user_sex, user_email);
     }
@@ -43,7 +43,6 @@ public class UserController {
         return userService.login(user_name, user_telephone, user_password);
     }
 
-
     /**
      * 忘记密码
      *
@@ -51,14 +50,16 @@ public class UserController {
      */
     @PostMapping("/update")
     public Integer updateUserInfo(@RequestParam("user_name") String user_name, @RequestParam("user_nick") String user_nick, @RequestParam("user_password") String user_password,
-                            @RequestParam("user_telephone") String user_telephone, @RequestParam("user_icon") String user_icon, @RequestParam("user_address") String user_address,
-                            @RequestParam("user_sex") Integer user_sex, @RequestParam("user_email") String user_email) {
-        return userService.update(user_name,user_password ,user_nick , user_telephone, user_icon,
+                                  @RequestParam("user_telephone") String user_telephone, @RequestParam("user_icon") String user_icon, @RequestParam("user_address") String user_address,
+                                  @RequestParam("user_sex") Integer user_sex, @RequestParam("user_email") String user_email) {
+        return userService.update(user_name, user_password, user_nick, user_telephone, user_icon,
                 user_address, user_sex, user_email);
-//        return userService.update(user_name, user_nick, user_password, user_telephone, user_icon,
-//                user_address.replaceAll("\"","^"), user_sex, user_email);
     }
 
+    @PostMapping("/findPass")
+    public Integer findPass(@RequestParam("user_id") Integer user_id, @RequestParam("user_password") String user_password) {
+        return userService.findPass(user_id, user_password);
+    }
 
     /**
      * 获取用户信息
@@ -66,8 +67,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/getuser")
-    public User getUser( @RequestParam("user_password") String user_password,
-                          @RequestParam("user_telephone") String user_telephone) {
+    public User getUser( @RequestParam("user_telephone") String user_telephone) {
         return userService.getItem(user_telephone);
     }
 
@@ -77,7 +77,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/getAllUser")
-    public Map<String, Object> getUser( ) {
-        return userService.getAllUser();
+    public Map<String, Object> getUser() {
+        return userService.getAllUser( );
     }
 }

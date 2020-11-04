@@ -17,8 +17,8 @@ import java.util.Map;
 public class ProductTypeController {
 
     //    private Integer id;
-//    private String name;
-//    private Integer type;
+    //    private String name;
+    //    private Integer type;
     @Autowired
     ProductTypeServiceImpl productTypeService;
 

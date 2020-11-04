@@ -14,7 +14,6 @@ public class StringUtil {
     public static String getRandomImgName(String fileName) {
 
         int index = fileName.lastIndexOf(".");
-
         if ((fileName == null || fileName.isEmpty()) || index == -1){
             throw new IllegalArgumentException();
         }

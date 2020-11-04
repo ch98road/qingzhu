@@ -14,4 +14,6 @@ public interface OrderService {
     Map<String, Object> getOrder(Integer id);
 
     Map<String, Object> getOrderByName(String user_name,Integer paymentstatus);
+
+    Map<String,Object> getAllOrder();
 }

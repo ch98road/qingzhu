@@ -16,16 +16,6 @@ import java.util.Map;
 public class OrderController {
 
 
-//    private Integer id;
-//    private Double totalprice;
-//    private String user;
-//    private Integer paymentstatus;
-//    private String productinfo;
-//    private String address;
-//    private Date ordertime;
-//    private Date finishtime;
-//    private Integer payway;
-
     @Autowired
     OrderService orderService;
 
@@ -46,6 +36,12 @@ public class OrderController {
     @PostMapping("/get")
     public Map<String, Object> getOrder(@RequestParam("id")Integer id) {
         return orderService.getOrder(id);
+    }
+
+
+    @PostMapping("/getAll")
+    public Map<String, Object> getOrder() {
+        return orderService.getAllOrder();
     }
 
     @PostMapping("/getByUid")

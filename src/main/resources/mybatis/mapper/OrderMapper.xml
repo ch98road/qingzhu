@@ -38,4 +38,8 @@
             AND id = '${id}'
         </if>;
     </select>
+
+    <select id="getAllOrder" resultType="com.docker.qmmall.model.Order">
+        SELECT * FROM  tb_order;
+    </select>
 </mapper>

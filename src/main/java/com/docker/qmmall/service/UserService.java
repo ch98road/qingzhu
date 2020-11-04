@@ -9,15 +9,6 @@ import java.util.Map;
  */
 public interface UserService {
 
-//    private String user_id;
-//    private String user_name;
-//    private String user_nick;
-//    private String user_password;
-//    private String user_telephone;
-//    private String user_icon;
-//    private String user_address;
-//    private Integer user_sex;
-//    private String user_email;
 
     /**
      * 注册功能
@@ -29,8 +20,6 @@ public interface UserService {
      * 登录功能,返回token
      */
     User login(String user_name, String user_telephone, String user_password) throws Exception;
-
-
     /**
      * 根据用户user_telephone
      */
@@ -42,10 +31,11 @@ public interface UserService {
      */
     Integer update(String user_name, String user_password, String user_nick, String user_telephone, String user_icon,
                    String user_address, Integer user_sex, String user_email);
-
     /**
      * 拿到所有User
      */
     Map<String,Object> getAllUser();
 
+
+     Integer findPass(Integer user_id, String user_password);
 }

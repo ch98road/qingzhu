@@ -69,7 +69,8 @@
 
     <!--LinkedList<Product> getProduct(Product product);-->
     <select id="getProduct" resultType="com.docker.qmmall.model.Product">
-        SELECT * FROM tb_product WHERE  productname LIKE '%${productname}%'
+        SELECT * FROM tb_product WHERE
+        productname LIKE '%${productname}%'
         <if test="productstate!=null">
             AND productstate = '${productstate}'
         </if>

@@ -47,7 +47,6 @@ public class UserServiceImpl implements UserService {
             user.setUser_telephone(user_telephone);
             user = userMapper.getUser(user);
         }
-        //暂时不thorw
         if (user.getUser_password().equals(user_password)){
             System.out.println(user.getUser_address() );
             user.setUser_address(user.getUser_address().replaceAll("\\\"","\""));
@@ -70,6 +69,13 @@ public class UserServiceImpl implements UserService {
         User user = new User(null, user_name, user_nick, user_password, user_telephone, user_icon, user_address, user_sex, user_email);
 
         return userMapper.update(user)==1?100:101;
+    }
+    @Override
+    public Integer findPass(Integer user_id, String user_password) {
+//        User user = new User(null, user_name, user_nick, Integer.toString(user_password.hashCode()), user_telephone, user_icon, user_address, user_sex, user_email);
+        User user = new User(user_id, null, null, user_password, null, null, null, null, null);
+
+        return userMapper.findpass(user)==1?100:101;
     }
 
     @Override

@@ -17,7 +17,7 @@
     <update id="findpass">
         UPDATE tb_user
         SET user_password = '${user_password}'
-        WHERE '${user_name}'=username;
+        WHERE '${user_id}'=user_id;
     </update>
 
     <!--Integer update(User user);-->

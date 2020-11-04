@@ -55,4 +55,12 @@ public class OrderServiceImpl implements OrderService {
         res.put("data",orderMapper.getOrder(order));
         return res;
     }
+
+    @Override
+    public Map<String, Object> getAllOrder() {
+        Map<String,Object> res = new HashMap<>();
+        res.put("res",100);
+        res.put("data",orderMapper.getAllOrder());
+        return res;
+    }
 }

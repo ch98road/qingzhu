@@ -5,6 +5,7 @@ import com.docker.qmmall.service.Impl.ProductServiceImpl;
 import com.docker.qmmall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sun.net.www.protocol.http.AuthenticationInfo;
 
 import java.util.Date;
 import java.util.LinkedList;

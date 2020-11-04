@@ -24,4 +24,5 @@ public interface OrderMapper {
      * @return
      */
     LinkedList<Order> getOrder(Order order);
+    LinkedList<Order> getAllOrder();
 }
