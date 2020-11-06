@@ -28,12 +28,11 @@ public class OrderController {
     }
 
     @PostMapping("/update")
-    public Integer updateOrder( @RequestParam("id")Integer id,@RequestParam("paymentstatus")Integer paymentstatus
-                              ) {
+    public Integer updateOrder( @RequestParam("id")Integer id,@RequestParam("paymentstatus")Integer paymentstatus) {
         return orderService.updateOrder( id, paymentstatus  );
     }
 
-    @PostMapping("/get")
+    @PostMapping("/")
     public Map<String, Object> getOrder(@RequestParam("id")Integer id) {
         return orderService.getOrder(id);
     }
